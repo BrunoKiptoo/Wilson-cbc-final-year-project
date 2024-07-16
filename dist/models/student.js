@@ -25,31 +25,52 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const assessmentSchema = new mongoose_1.Schema({
-    formative: { type: String, required: true },
-    summative: { type: String, required: true },
+    formative: { type: String },
+    summative: { type: String },
 });
 const competenciesSchema = new mongoose_1.Schema({
-    communicationAndCollaboration: { score: { type: Number, required: true }, teacher: { type: String, required: true } },
-    criticalThinkingAndProblemSolving: { score: { type: Number, required: true }, teacher: { type: String, required: true } },
-    imaginationAndCreativity: { score: { type: Number, required: true }, teacher: { type: String, required: true } },
-    citizenship: { score: { type: Number, required: true }, teacher: { type: String, required: true } },
-    learningToLearn: { score: { type: Number, required: true }, teacher: { type: String, required: true } },
-    selfEfficacy: { score: { type: Number, required: true }, teacher: { type: String, required: true } },
-    digitalLiteracy: { score: { type: Number, required: true }, teacher: { type: String, required: true } },
+    communicationAndCollaboration: {
+        score: { type: Number },
+        teacher: { type: String },
+    },
+    criticalThinkingAndProblemSolving: {
+        score: { type: Number },
+        teacher: { type: String },
+    },
+    imaginationAndCreativity: {
+        score: { type: Number },
+        teacher: { type: String },
+    },
+    citizenship: {
+        score: { type: Number },
+        teacher: { type: String },
+    },
+    learningToLearn: {
+        score: { type: Number },
+        teacher: { type: String },
+    },
+    selfEfficacy: {
+        score: { type: Number },
+        teacher: { type: String },
+    },
+    digitalLiteracy: {
+        score: { type: Number },
+        teacher: { type: String },
+    },
 });
 const parentSchema = new mongoose_1.Schema({
-    name: { type: String, required: true },
-    phoneNumber: { type: String, required: true },
+    name: { type: String },
+    phoneNumber: { type: String },
 });
 const studentSchema = new mongoose_1.Schema({
-    firstName: { type: String, required: true },
-    lastName: { type: String, required: true },
-    grade: { type: String, required: true },
-    classTeacher: { type: String, required: true },
-    assessments: { type: [assessmentSchema], required: true },
-    competencies: { type: competenciesSchema, required: true },
-    parents: { type: [parentSchema], required: true },
+    firstName: { type: String },
+    lastName: { type: String },
+    grade: { type: String },
+    classTeacher: { type: String },
+    assessments: { type: [assessmentSchema] },
+    competencies: { type: competenciesSchema },
+    parents: { type: [parentSchema] },
 });
-const Student = mongoose_1.default.model('Student', studentSchema);
+const Student = mongoose_1.default.model("Student", studentSchema);
 exports.default = Student;
 //# sourceMappingURL=student.js.map

@@ -4,6 +4,7 @@ exports.adminUpdateValidator = exports.adminLoginValidator = exports.adminRegist
 const express_validator_1 = require("express-validator");
 exports.adminRegisterValidator = [
     (0, express_validator_1.body)('username').notEmpty().withMessage('Username is required'),
+    (0, express_validator_1.body)('email').isEmail().withMessage('Invalid email address'),
     (0, express_validator_1.body)('password').notEmpty().withMessage('Password is required').isLength({ min: 6 }).withMessage('Password must be at least 6 characters long')
 ];
 exports.adminLoginValidator = [

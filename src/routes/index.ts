@@ -1,4 +1,3 @@
-
 import { appVersion } from "../config/constants";
 import pingRoutes from "./ping";
 import StudentRoutes from "./student.routes";
